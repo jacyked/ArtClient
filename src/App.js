@@ -16,7 +16,7 @@ function App() {
 
   const loadAllPictures = async () => {
     try{
-      const resp = await axios.get('http://localhost:5000/photos');
+      const resp = await axios.get('https://portfolio-366318.uw.r.appspot.com:5000/photos');
       //console.log("Load pictures triggered, recieved response from server: ");
       //console.log(resp);
        
@@ -58,7 +58,7 @@ function App() {
     }catch(err){
       console.log(err);
       try{
-        const resp = await axios.get('http://10.0.0.105:5000/photos');
+        const resp = await axios.get('https://portfolio-366318.uw.r.appspot.com/photos');
         //console.log("Load pictures triggered, recieved response from server: ");
         //console.log(resp);
          
