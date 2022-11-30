@@ -71,11 +71,15 @@ function App() {
     console.log("LoadPictures finished. Categories now: " + categories.length);
   });
 
+  
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Hope Emily Portfolio</h1>
-        <Fader text="Description" />
+        <h2>Artist Description</h2>
+        <Fader text="Scroll to view" />
+        
       </header>
       <div id='categories'>
           {categories.map((category) => {
