@@ -25,7 +25,7 @@ function Carousel(props) {
     //Desktop and tablet values
     else{
         imgWidth = '';
-        imgHeight = (height * 0.6) + "px";
+        imgHeight = (height * 0.7) + "px";
     }
     
     //Grab list of images, build links for src
