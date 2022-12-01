@@ -26,7 +26,7 @@ const Fader = ({ text }) => {
 
     return (
         <>
-            <h3 data-testid="fader" className={fadeProp.fade}>{text}</h3>
+            <h3 data-testid="fader" className="invisible">{text}</h3>
             <h3 data-testid="fader" className={fadeProp.fade}> <span className="chevron"></span></h3>
         </>
     )

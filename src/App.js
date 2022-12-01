@@ -71,7 +71,7 @@ function App() {
     console.log("LoadPictures finished. Categories now: " + categories.length);
   });
 
-  
+
 
   return (
     <div className="App">
@@ -81,18 +81,23 @@ function App() {
         <Fader text="Scroll to view" />
         
       </header>
-      <div id='categories'>
+      <div className="App-content" id='categories'>
           {categories.map((category) => {
             return (
               <div
               key={category.name}>
-                <h2>{category.name}</h2>
+                <h3>{category.name}</h3>
                 <Carousel
                   imageList={category.allImages}
                 />
               </div>
             );
           })}
+        </div>
+        <div className="App-footer">
+          <table>
+            <tr><td><strong> Instagram: </strong> @placeholder </td><td><strong> Email: </strong> placeholder@gmail.com </td></tr>
+          </table>
         </div>
       
       
