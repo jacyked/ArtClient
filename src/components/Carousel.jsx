@@ -3,7 +3,7 @@ import "@egjs/react-flicking/dist/flicking.css";
 import React from "react";
 
 
-//Image carousel component using Flicking
+//Builds the image carousel component using Flicking
 function Carousel(props) {
 
     //Grab the current screen size
