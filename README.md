@@ -1,4 +1,6 @@
+# ArtClient
 Art Portfolio Application - Client side
+Server found here: 
 
 Fetches image list from linked Google Drive, then dynamically builds image carousels sorted into corresponding categories.
 
