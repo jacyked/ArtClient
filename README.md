@@ -4,8 +4,8 @@ Fetches image list from linked Google Drive, then dynamically builds image carou
 
 To run:
 After cloning, navigate to project folder and run
-'''npm install'''
+```npm install```
 then
-'''npm start'''
+```npm start```
 
 
