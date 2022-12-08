@@ -14,7 +14,7 @@ function App() {
   //Grab photo info from server 
   const loadAllPictures = async () => {
     try{
-      const resp = await axios.get('https://portfolio-366318.uw.r.appspot.com/photos');
+      const resp = await axios.get('https://hopeemilyportfolio.uw.r.appspot.com/photos');
        
       let catArray = [];
       resp.data.forEach(buildCategory);
