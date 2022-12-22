@@ -4,15 +4,17 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Carousel from './components/Carousel';
 import Fader from './components/Fader';
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 function App() {
   
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
   
   //Grab photo info from server 
   const loadAllPictures = async () => {
+    setLoading(true);
     try{
       const resp = await axios.get('https://hopeemilyportfolio.uw.r.appspot.com/photos');
        
@@ -43,6 +45,7 @@ function App() {
       console.log(err);
       //TODO add placeholders if server cannot be reached
     }
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -59,28 +62,36 @@ function App() {
         <h1>Hope Emily Portfolio</h1>
         <h3> Oil  &#9900;  Acrylic  &#9900;  Illustration  &#9900;  Mixed Media </h3>
         <Fader text="Scroll to view" />
-        
       </header>
-      <div className="App-content" id='categories'>
-          {categories.map((category) => {
-            return (
-              <div
-              key={category.name}>
-                <h3>{category.name}</h3>
-                <Carousel
-                  imageList={category.allImages}
-                />
-              </div>
-            );
-          })}
+    
+      {(loading)
+        ?(<div className="App-header">
+          <CircularProgress />
         </div>
-        <div className="App-footer">
-          <table>
-            <tbody>
-              <tr><td><strong> Instagram: </strong> @placeholder </td><td><strong> Email: </strong> placeholder@gmail.com </td></tr>
-            </tbody>
-          </table>
+        ):(
+        <div>
+          <div className="App-content" id='categories'>
+            {categories.map((category) => {
+              return (
+                <div
+                key={category.name}>
+                  <h3>{category.name}</h3>
+                  <Carousel
+                    imageList={category.allImages}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className="App-footer">
+            <table>
+              <tbody>
+                <tr><td><strong> Instagram: </strong> @placeholder </td><td><strong> Email: </strong> placeholder@gmail.com </td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      )}
     </div>
   );
 }
